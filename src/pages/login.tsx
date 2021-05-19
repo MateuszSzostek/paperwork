@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from "../components/Button"
+import "../css/styles.css"
 
 const Login = () => {
     return (

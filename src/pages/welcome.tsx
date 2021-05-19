@@ -1,5 +1,6 @@
 import React from 'react'
 import GoogleButton from "../components/GoogleButton"
+import "../css/styles.css"
 
 const Welcome = () => {
     return (
