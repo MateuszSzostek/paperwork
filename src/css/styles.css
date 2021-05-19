@@ -1,0 +1,284 @@
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justify-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.trans-03s {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.color-light-gray {
+  color: lightgray;
+}
+
+.color-gray {
+  color: gray;
+}
+
+.margin-y-10px {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mt-10px {
+  margin-top: 10px;
+}
+
+.mt-15px {
+  margin-top: 15px;
+}
+
+.mt-80px {
+  margin-top: 80px;
+}
+
+.my-2px {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.weight-400 {
+  font-weight: 400;
+}
+
+.weight-500 {
+  font-weight: 500;
+}
+
+.weight-600 {
+  font-weight: 600;
+}
+
+.font-14px {
+  font-size: 14px;
+}
+
+.font-0px {
+  font-size: 0px;
+}
+
+body {
+  background-color: #0e0e0e;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .5px;
+}
+
+nav {
+  margin: 30px 0 30px 0;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.opacity-0 {
+  opacity: 0%;
+}
+
+.time-period-progress-bar {
+  width: 150px;
+  height: 20px;
+  background-color: white;
+}
+
+.progress {
+  height: 20px;
+  background-color: #9df7c0;
+}
+
+.title {
+  margin-bottom: 160px;
+}
+
+.width-600 {
+  width: 600px;
+}
+
+.width-1200 {
+  width: 1200px;
+}
+
+.h100vh {
+  height: 100vh;
+}
+
+.container {
+  width: 1200px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 250px 1fr;
+      grid-template-columns: 250px 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 0px 0px;
+      grid-template-areas: ". .";
+}
+
+.grid-active-contracts-titles, .contract-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 20px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 20px;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 0px 0px;
+      grid-template-areas: ". . . .";
+}
+
+.contract-container {
+  border-radius: 10px;
+  background-color: #222222;
+  margin: 15px 0 15px 0;
+  padding: 15px 10px 15px 10px;
+}
+
+.user-container {
+  margin-top: 20px;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  padding-right: 10px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.main-content-container {
+  min-width: 900px;
+  padding-left: 30px;
+}
+
+.contracts-amount-container {
+  margin-left: 50px;
+  text-align: center;
+  padding-top: 3px;
+  width: 30px;
+  height: 20px;
+  border: 1px gray solid;
+  color: gray;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.google-button {
+  padding: 15px;
+  width: 200px;
+  border: 2px gray solid;
+}
+
+.google-button-text {
+  text-decoration: none;
+  color: black;
+}
+
+.side-nav {
+  border-right: 1px #333333 solid;
+  height: 100vh;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.button-text {
+  font-size: 1.37rem;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.side-nav-item-link {
+  text-decoration: none;
+  color: lightgray;
+  padding: 10px;
+}
+
+.side-nav-item-link:hover {
+  background-color: #333333;
+}
+
+.active-side-link {
+  background-color: #333333;
+}
+
+.side-nav-item-icon {
+  color: white;
+  padding: 12px;
+}
+
+.sended-info {
+  font-style: italic;
+  color: #dec5ff;
+}
+/*# sourceMappingURL=styles.css.map */
