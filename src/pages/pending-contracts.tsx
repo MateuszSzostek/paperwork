@@ -19,9 +19,9 @@ const PendingContracts = ({children}) => {
     return (
         <Layout>
             <div className="flex row align-center">
-                <h2>Active Contracts</h2>
+                <h2>Pending Contracts</h2>
                 <div className="contracts-amount-container">
-                    <div>5</div>
+                    <div>3</div>
                 </div>
             </div>
             <div className="grid-active-contracts-titles">

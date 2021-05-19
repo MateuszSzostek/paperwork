@@ -201,6 +201,18 @@ section {
     text-decoration: none;
 }
 
+input[type=text]{
+    background-color: black;
+    color: white;
+    outline: none;
+    border: .5px gray solid;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: 10px 10px 10px 0;
+    padding: 9px;
+    max-width: 368px;
+}
 
 .side-nav-item-link{
     text-decoration: none;
