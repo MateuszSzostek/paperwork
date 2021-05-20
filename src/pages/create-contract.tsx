@@ -1,13 +1,15 @@
-import React from "react"
+import React, { useState } from "react"
 import "../css/styles.css"
 import Button from "../components/Button"
 import documentBlank from "@iconify-icons/carbon/document-blank"
 import { Link } from "gatsby"
+import GeneratedForm from "../components/GeneratedForm"
 
 const CreateContract = () => {
+  const [generated, setGenerated] = useState<boolean>(false)
   return (
     <section>
-      <div className="width-1200 flex col">
+      <div className="width-1200 flex row">
         <div className="width-600">
           <h2>New Contract with Libido AB</h2>
           <span>
@@ -127,7 +129,7 @@ const CreateContract = () => {
               ></textarea>
             </div>
             <div className="flex row align-center">
-              <div className="wmin200px">
+              <div onClick={() => setGenerated(true)} className="wmin200px">
                 <Button
                   textColor="black"
                   iconColor="black"
@@ -146,6 +148,9 @@ const CreateContract = () => {
               </Link>
             </div>
           </form>
+        </div>
+        <div style={generated ? { display: "flex" } : { display: "none" }}>
+          <GeneratedForm />
         </div>
       </div>
     </section>
