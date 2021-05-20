@@ -1,23 +1,23 @@
-import React, { PropsWithChildren, useState} from "react"
+import React, { PropsWithChildren } from "react"
 import { Link } from "gatsby"
 import { IButtonProps } from "../helpers/helpers"
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from "@iconify/react"
 
 const Button = (props: PropsWithChildren<IButtonProps>) => {
-  const { children, slug, backgroundColor, img } = props
-  const [animated, setAnimated] = useState<boolean>(false)
-
-
+  const { children, slug, backgroundColor, img, iconColor, textColor } = props
   return (
     <>
-        <>
-          <Link to={slug} className="">
-            <div className="button" style={{backgroundColor: backgroundColor}}>
-                <Icon icon={img}></Icon>
-              < div className="button-text"> {children}</div>
+      <>
+        <Link to={slug} className="decoration-none">
+          <div className="button" style={{ backgroundColor: backgroundColor }}>
+            <Icon color={iconColor} icon={img}></Icon>
+            <div style={{ color: textColor }} className="button-text">
+              {" "}
+              {children}
             </div>
-          </Link>
-        </>
+          </div>
+        </Link>
+      </>
     </>
   )
 }

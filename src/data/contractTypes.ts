@@ -1,5 +1,1 @@
-export const ContractTypes = [
-  "SOW",
-  "Consultating Agreement",
-  "NDA"
-]
+export const ContractTypes = ["SOW", "Consultant Agreement", "NDA"]

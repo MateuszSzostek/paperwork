@@ -1,28 +1,53 @@
-import React from 'react'
+import React, { useState } from "react"
 import Button from "../components/Button"
-import plusCircleFilled from '@iconify-icons/ant-design/plus-circle-filled';
+import plusCircleFilled from "@iconify-icons/ant-design/plus-circle-filled"
 import sideNavData from "../data/sideNavData"
 import SideNavItem from "../components/SideNavItem"
-import { Icon, InlineIcon } from '@iconify/react';
-import smileIcon from '@iconify-icons/fa-regular/smile';
+import { Icon } from "@iconify/react"
+import smileIcon from "@iconify-icons/fa-regular/smile"
+import "../css/styles.css"
+import CreateContractPopover from "../components/CreateContractPopover"
 
 const Layout = ({ children }) => {
-
+  const [createContractActive, setCreateContractActive] = useState<boolean>(
+    false
+  )
   return (
     <section>
+      <div
+        style={createContractActive ? { display: "flex" } : { display: "none" }}
+        className="relative"
+      >
+        <CreateContractPopover />
+      </div>
       <div className="container">
-        <div className="side-nav"> 
+        <div className="side-nav">
           <h1 className="title">PAPERWORK</h1>
-          <Button img={plusCircleFilled} backgroundColor="#7811ff">New contract</Button>
+          <div onClick={() => setCreateContractActive(true)} className="m-10px">
+            <Button
+              iconColor="white"
+              img={plusCircleFilled}
+              backgroundColor="#7811ff"
+            >
+              New contract
+            </Button>
+          </div>
           <nav>
-            {sideNavData.map(s => <SideNavItem key={s.id} icon={s.icon} slug={s.slug} name={s.name} />)}
+            {sideNavData.map(s => (
+              <SideNavItem
+                key={s.id}
+                icon={s.icon}
+                slug={s.slug}
+                name={s.name}
+              />
+            ))}
           </nav>
         </div>
         <div className="main-content-container">
           <div className="flex justify-right row user-container">
-            <div  className="flex row align-center">
-              <Icon className="user-icon" color="white" icon={smileIcon}/>
-              <span className="color-light-gray" >Sara Johanesson</span>
+            <div className="flex row align-center">
+              <Icon className="user-icon" color="white" icon={smileIcon} />
+              <span className="color-light-gray">Sara Johanesson</span>
             </div>
           </div>
           {children}

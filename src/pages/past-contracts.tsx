@@ -1,137 +1,59 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from "react"
 import pastContractsData from "../data/pastContractsData"
 import Layout from "../components/Layout"
 import Contract from "../components/Contract"
-import bellPlus from '@iconify-icons/tabler/bell-plus';
-import { Icon } from '@iconify/react';
+import { IContract } from "../helpers/helpers"
+import { ContractTypes } from "../data/contractTypes"
+import ContractTableTitles from "../components/ContractTableTitles"
 
-
-const PastContracts = ({children}) => {
-     const [contracts, setContracts] = useState();
-
-    const SOWcontracts = pastContractsData.filter(s => s.type ==="SOW")
-    const ConsultantAgreementContracts = pastContractsData.filter(s => s.type ==="Consultant Agreement")
-    const NDAContracts = pastContractsData.filter(s => s.type ==="NDA")
-
-    console.log(SOWcontracts);
-     console.log(ConsultantAgreementContracts);
-     console.log(NDAContracts);
-    return (
-        <Layout>
-            <div className="flex row align-center">
-                <h2>Past Contracts</h2>
-                <div className="contracts-amount-container">
-                    <div>3</div>
-                </div>
-            </div>
-            <div className="grid-active-contracts-titles">
-                <div className="flex col">
-                    <span className="color-gray">Cost of active contracts</span>
-                    <span className="weight-600 margin-y-10px">$ 32,000</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray">Highest cost project</span>
-                    <span className="weight-600 margin-y-10px">Nokia</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray">Highest cost vendor</span>
-                    <span className="weight-600 margin-y-10px">Traduko AB</span>
-                </div>
-            </div>
-            <br/>
-            <br/>
-            <div className="contracts-container">
-                <h3 className="">SOW</h3>
-                <div className="grid-active-contracts-titles">
-                <div className="flex col">
-                    <span className="color-gray font-14px ">VENDORS</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray font-14px ">PROJECT</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray font-14px ">TIME PERIOD</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray font-14px ">CONTRACT VALUE</span>
-                </div>
-            </div>
-                {SOWcontracts.map(s => <>
-                    <Contract 
-                    key={s.id} 
-                    vendor={s.vendor} 
-                    timePeriod={s.timePeriod} 
-                    project={s.project} 
-                    contractValue={s.contractValue} 
-                    progress={s.progress}
-                    vendorMore={s.vendorMore}
-                    timePeriodMore={s.timePeriodMore}
-                    contractValueMore={s.contractValueMore}/>
-                </>
-                    
-                )}
-                <h3 className="">Consulting Agreement</h3>
-                <div className="grid-active-contracts-titles">
-                <div className="flex col">
-                    <span className="color-gray font-14px ">VENDORS</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray font-14px ">PROJECT</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray font-14px ">TIME PERIOD</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray font-14px ">CONTRACT VALUE</span>
-                </div>
-            </div>
-                {ConsultantAgreementContracts.map(s => 
-                   <>
-                    <Contract 
-                    key={s.id} 
-                    vendor={s.vendor} 
-                    timePeriod={s.timePeriod} 
-                    project={s.project} 
-                    contractValue={s.contractValue} 
-                    progress={s.progress}
-                    vendorMore={s.vendorMore}
-                    timePeriodMore={s.timePeriodMore}
-                    contractValueMore={s.contractValueMore}/>
-                </>
-                )}
-                <h3 className="">NDA</h3>
-                <div className="grid-active-contracts-titles">
-                <div className="flex col">
-                    <span className="color-gray font-14px ">VENDORS</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray font-14px ">PROJECT</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray font-14px ">TIME PERIOD</span>
-                </div>
-                <div className="flex col">
-                    <span className="color-gray font-14px ">CONTRACT VALUE</span>
-                </div>
-            </div>
-                {NDAContracts.map(s => 
-                   <>
-                    <Contract 
-                    key={s.id} 
-                    vendor={s.vendor} 
-                    timePeriod={s.timePeriod} 
-                    project={s.project} 
-                    contractValue={s.contractValue} 
-                    progress={s.progress}
-                    vendorMore={s.vendorMore}
-                    timePeriodMore={s.timePeriodMore}
-                    contractValueMore={s.contractValueMore}/>           
-                </>
-                )}
-            </div>
-            {children}
-        </Layout>
-    )
+const PastContracts = () => {
+  const [contracts] = useState<IContract[]>([])
+  for (let i = 0; i < ContractTypes.length; i++) {
+    const contract: IContract = {
+      key: ContractTypes[i],
+      array: pastContractsData.filter(s => s.type === ContractTypes[i]),
+    }
+    contracts[i] = contract
+  }
+  return (
+    <Layout>
+      <div className="flex row align-center">
+        <h2>Past Contracts</h2>
+        <div className="contracts-amount-container">
+          <div>{pastContractsData.length}</div>
+        </div>
+      </div>
+      <div className="grid-active-contracts-titles">
+        <div className="flex col">
+          <span className="color-gray">Cost of active contracts</span>
+          <span className="weight-600 margin-y-10px">$ 32,000</span>
+        </div>
+        <div className="flex col">
+          <span className="color-gray">Highest cost project</span>
+          <span className="weight-600 margin-y-10px">Nokia</span>
+        </div>
+        <div className="flex col">
+          <span className="color-gray">Highest cost vendor</span>
+          <span className="weight-600 margin-y-10px">Traduko AB</span>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div className="contracts-container">
+        {contracts.map(s => (
+          <>
+            <h3 className="">{s.key}</h3>
+            <ContractTableTitles />
+            {s.array.map(m => (
+              <>
+                <Contract {...m} />
+              </>
+            ))}
+          </>
+        ))}
+      </div>
+    </Layout>
+  )
 }
 
 export default PastContracts

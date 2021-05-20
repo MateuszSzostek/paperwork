@@ -6,6 +6,34 @@
   position: absolute;
 }
 
+.fixed {
+  position: fixed;
+}
+
+.bg-color-dark-gray {
+  background-color: #333333;
+}
+
+.bg-color-light-green {
+  background-color: #9df7c0;
+}
+
+.bg-black-transparent {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.color-black {
+  color: black;
+}
+
+.color-white {
+  color: white;
+}
+
+.ml-10px {
+  margin-left: 10px;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,6 +66,12 @@
           justify-content: center;
 }
 
+.justify-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .justify-right {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -45,8 +79,20 @@
 }
 
 .trans-03s {
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.br-radius-15px {
+  border-radius: 15px;
+}
+
+.br-radius-5px {
+  border-radius: 5px;
 }
 
 .color-light-gray {
@@ -66,8 +112,20 @@
   margin-top: 10px;
 }
 
+.m-10px {
+  margin: 10px;
+}
+
 .mt-15px {
   margin-top: 15px;
+}
+
+.mt-16px {
+  margin-top: 16px;
+}
+
+.mt-50px {
+  margin-top: 50px;
 }
 
 .mt-80px {
@@ -77,6 +135,23 @@
 .my-2px {
   margin-top: 2px;
   margin-bottom: 2px;
+}
+
+.py-5px {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.p-20px {
+  padding: 20px;
+}
+
+.p-5px {
+  padding: 5px;
+}
+
+.b-15px {
+  bottom: 15px;
 }
 
 .weight-400 {
@@ -95,15 +170,27 @@
   font-size: 14px;
 }
 
+.font-24px {
+  font-size: 24px;
+}
+
+.font-20px {
+  font-size: 20px;
+}
+
 .font-0px {
   font-size: 0px;
+}
+
+.decoration-none {
+  text-decoration: none;
 }
 
 body {
   background-color: #0e0e0e;
   color: white;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: .5px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.5px;
 }
 
 nav {
@@ -126,6 +213,27 @@ section {
   opacity: 0%;
 }
 
+.option-button {
+  position: relative;
+}
+
+.popover-element {
+  background-color: gainsboro;
+  color: black;
+  right: 0;
+  top: 0;
+  border-radius: 5px;
+}
+
+.option-ele-text {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.option-ele-text:hover {
+  background-color: #dec5ff;
+}
+
 .time-period-progress-bar {
   width: 150px;
   height: 20px;
@@ -141,6 +249,15 @@ section {
   margin-bottom: 160px;
 }
 
+.form-input {
+  background-color: #333333;
+  color: gainsboro;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 15px 10px 0;
+}
+
 .width-600 {
   width: 600px;
 }
@@ -149,8 +266,48 @@ section {
   width: 1200px;
 }
 
+.w100vw {
+  width: 100vw;
+}
+
 .h100vh {
   height: 100vh;
+}
+
+.h-200px {
+  height: 200px;
+}
+
+.t0 {
+  top: 0;
+}
+
+.l0 {
+  left: 0;
+}
+
+.mb-100px {
+  margin-bottom: 100px;
+}
+
+.mb-20px {
+  margin-bottom: 20px;
+}
+
+.wmin200px {
+  min-width: 300px;
+}
+
+.wmax-250px {
+  max-width: 380px;
+}
+
+.w-max-600px {
+  max-width: 600px;
+}
+
+.br-1-soli-gray {
+  border: 1px gray solid;
 }
 
 .container {
@@ -165,7 +322,8 @@ section {
       grid-template-areas: ". .";
 }
 
-.grid-active-contracts-titles, .contract-container {
+.grid-active-contracts-titles,
+.contract-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 20px;
@@ -174,6 +332,21 @@ section {
       grid-template-rows: 1fr;
   gap: 0px 0px;
       grid-template-areas: ". . . .";
+}
+
+.triple-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33.33% 33.33% 33.33%;
+      grid-template-columns: 33.33% 33.33% 33.33%;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+      grid-template-areas: ". . . ";
+}
+
+.contract-template:hover {
+  border-color: #dec5ff;
 }
 
 .contract-container {
@@ -248,21 +421,21 @@ section {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  margin: 10px;
 }
 
 .button-text {
+  color: white;
   font-size: 1.37rem;
   padding: 15px;
   text-align: center;
   text-decoration: none;
 }
 
-input[type=text] {
+.login-input {
   background-color: black;
   color: white;
   outline: none;
-  border: .5px gray solid;
+  border: 0.5px gray solid;
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
