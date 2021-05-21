@@ -50,9 +50,33 @@ const Contract = (props: Item) => {
             (delPopover ? "Delete?" : "")
           }
         >
-          {duplicatePopover ? <DuplicatePop /> : <></>}
-          {editPopover ? <EditPop /> : <></>}
-          {delPopover ? <DeletePop /> : <></>}
+          {duplicatePopover ? (
+            <DuplicatePop
+              delPopover={setDelPopover}
+              editPopover={setEditPopover}
+              duplicatePopover={setDuplicatePopover}
+            />
+          ) : (
+            <></>
+          )}
+          {editPopover ? (
+            <EditPop
+              delPopover={setDelPopover}
+              editPopover={setEditPopover}
+              duplicatePopover={setDuplicatePopover}
+            />
+          ) : (
+            <></>
+          )}
+          {delPopover ? (
+            <DeletePop
+              delPopover={setDelPopover}
+              editPopover={setEditPopover}
+              duplicatePopover={setDuplicatePopover}
+            />
+          ) : (
+            <></>
+          )}
         </Popover>
       </div>
       <div

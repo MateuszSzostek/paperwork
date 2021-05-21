@@ -40,3 +40,8 @@ export interface IContractTemplate {
   text: string
   author: string
 }
+export interface IPopProps {
+  editPopover: Function
+  duplicatePopover: Function
+  delPopover: Function
+}
