@@ -12,7 +12,7 @@ const ContractTemplate = (props: IContractTemplate) => {
           <span className="font-24px weight-600">{title}</span>
         </div>
         <div>
-          <div className="free-badge flex justify-center align-center bg-color-light-green br-radius-5px color-black br-1-soli-gray ">
+          <div className="free-badge flex justify-center align-center bg-light-green br-radius-5px color-black br-1-soli-gray ">
             <span className="p-5px">Free</span>
           </div>
         </div>
