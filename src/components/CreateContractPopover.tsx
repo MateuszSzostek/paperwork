@@ -2,12 +2,29 @@ import React from "react"
 import { ContractTypes } from "../data/contractTypes"
 import vendorData from "../data/vendorData"
 import Button from "../components/Button"
+import { Icon, InlineIcon } from "@iconify/react"
+import crossCircled from "@iconify-icons/radix-icons/cross-circled"
 
-const CreateContractPopover = () => {
+interface ICreateContractPopover {
+  isActive: any
+}
+
+const CreateContractPopover = (props: ICreateContractPopover) => {
+  const { isActive } = props
   return (
     <div className="fixed t0 l0 w100vw h100vh flex justify-center align-center z-50 bg-black-transparent">
       <div className="absolute bg-color-dark-gray flex col br-radius-15px br-1-soli-gray">
-        <h2 style={{ padding: "20px 90px 0px 90px" }}>Chose templates</h2>
+        <div className="flex row justify-between">
+          <h2 style={{ padding: "0px 90px 0px 30px" }}>Chose templates</h2>
+          <div onClick={() => isActive(false)}>
+            <Icon
+              width={32}
+              height={32}
+              className="pointer mr-20 mt-20"
+              icon={crossCircled}
+            />
+          </div>
+        </div>
         <span style={{ margin: "10px 30px 10px 30px " }}>Select vendor:</span>
         <select
           style={{
@@ -31,7 +48,13 @@ const CreateContractPopover = () => {
         <span style={{ margin: "10px 30px 10px 30px " }}>Select contract:</span>
         {ContractTypes.map((s, idx) => (
           <div style={{ padding: "5px 30px 5px 30px" }} key={idx}>
-            <input type="checkbox" id={s} name={s} value={s} />
+            <input
+              className="pointer"
+              type="checkbox"
+              id={s}
+              name={s}
+              value={s}
+            />
             <label htmlFor={s}>{s}</label>
           </div>
         ))}

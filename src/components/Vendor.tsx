@@ -11,6 +11,9 @@ interface IVendor {
 const Vendor = (props: IVendor) => {
   const { vendor, numOfContracts, activeContract, totalValue } = props
   const [moreActive, setMoreActive] = useState<boolean>(false)
+  const [duplicatePopover, setDuplicatePopover] = useState<boolean>(false)
+  const [editPopover, setEditPopover] = useState<boolean>(false)
+  const [delPopover, setDelPopover] = useState<boolean>(false)
 
   return (
     <div
@@ -38,7 +41,11 @@ const Vendor = (props: IVendor) => {
           <div className="mt-15px">{totalValue}</div>
         </div>
       </div>
-      <OptionsPopover />
+      <OptionsPopover
+        edit={setEditPopover}
+        duplicate={setDuplicatePopover}
+        del={setDelPopover}
+      />
     </div>
   )
 }

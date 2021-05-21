@@ -3,12 +3,22 @@ import "../css/styles.css"
 import Button from "../components/Button"
 import documentBlank from "@iconify-icons/carbon/document-blank"
 import { Link } from "gatsby"
-import GeneratedForm from "../components/GeneratedForm"
+import { Icon } from "@iconify/react"
+import smileIcon from "@iconify-icons/fa-regular/smile"
 
 const CreateContract = () => {
   const [generated, setGenerated] = useState<boolean>(false)
   return (
-    <section>
+    <section className="flex col">
+      <div className="width-1200 flex row justify-between">
+        <h1 className="">PAPERWORK</h1>
+        <div className="flex justify-right row user-container">
+          <div className="flex row align-center">
+            <Icon className="user-icon" color="white" icon={smileIcon} />
+            <span className="color-light-gray">Sara Johanesson</span>
+          </div>
+        </div>
+      </div>
       <div className="width-1200 flex row">
         <div className="width-600">
           <h2>New Contract with Libido AB</h2>
@@ -129,8 +139,9 @@ const CreateContract = () => {
               ></textarea>
             </div>
             <div className="flex row align-center">
-              <div onClick={() => setGenerated(true)} className="wmin200px">
+              <div className="wmin200px">
                 <Button
+                  slug="/generated-contract"
                   textColor="black"
                   iconColor="black"
                   img={documentBlank}
@@ -149,9 +160,22 @@ const CreateContract = () => {
             </div>
           </form>
         </div>
-        <div style={generated ? { display: "flex" } : { display: "none" }}>
-          <GeneratedForm />
+        <div className="width-600 flex row justify-right h-150px mt-50px">
+          <div className="flex row justify-between br-radius-5px bg-color-dark-gray p-20px ">
+            <div className="flex col mr-30px">
+              <span>Libido AB</span>
+              <span className="py-5px ">Hakan Libido</span>
+              <span className="py-5px ">Kungestensgatan</span>
+              <span className="py-5px ">114 23 Stockholm</span>
+            </div>
+            <div>
+              <span className="color-violet pointer">Edit</span>
+            </div>
+          </div>
         </div>
+        <div
+          style={generated ? { display: "flex" } : { display: "none" }}
+        ></div>
       </div>
     </section>
   )

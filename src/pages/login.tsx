@@ -56,7 +56,7 @@ const Login = () => {
             placeholder="Country"
           ></input>
           <div className="wmax-250px mt-15px">
-            <Button backgroundColor="#7811ff" slug="/active-contracts">
+            <Button backgroundColor="#7811ff" slug="/">
               Next
             </Button>
           </div>

@@ -10,9 +10,12 @@ const Button = (props: PropsWithChildren<IButtonProps>) => {
       <>
         <Link to={slug} className="decoration-none">
           <div className="button" style={{ backgroundColor: backgroundColor }}>
-            <Icon color={iconColor} icon={img}></Icon>
+            <Icon
+              style={{ marginLeft: "15px" }}
+              color={iconColor}
+              icon={img}
+            ></Icon>
             <div style={{ color: textColor }} className="button-text">
-              {" "}
               {children}
             </div>
           </div>

@@ -7,18 +7,21 @@ import { Icon } from "@iconify/react"
 import smileIcon from "@iconify-icons/fa-regular/smile"
 import "../css/styles.css"
 import CreateContractPopover from "../components/CreateContractPopover"
+import Popover from "../components/Popover"
+//import { ApplicationState } from "../store/store"
 
 const Layout = ({ children }) => {
   const [createContractActive, setCreateContractActive] = useState<boolean>(
     false
   )
+  //const popover = useSelector((state: ApplicationState) => state.popover)
   return (
-    <section>
+    <section style={{ minWidth: "1200px" }}>
       <div
         style={createContractActive ? { display: "flex" } : { display: "none" }}
         className="relative"
       >
-        <CreateContractPopover />
+        <CreateContractPopover isActive={setCreateContractActive} />
       </div>
       <div className="container">
         <div className="side-nav">

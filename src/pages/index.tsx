@@ -1,11 +1,29 @@
-import * as React from "react"
+import React from "react"
+import ContractTemplate from "../components/ContractTemplate"
+import NewTemplate from "../components/NewTemplate"
+import contractsTemplateData from "../data/contractTemplateData"
 import Layout from "../components/Layout"
-import "../css/styles.css"
+import { Provider } from "react-redux"
 
-const IndexPage = () => (
-  <Layout>
-    This is awesome gatsby site!
-  </Layout>
-)
+const IndexPage = ({ children }) => {
+  return (
+    <Layout>
+      <div className="flex col">
+        <h2>Contracts Templates</h2>
+        <div className="triple-grid">
+          {contractsTemplateData.map(s => (
+            <ContractTemplate
+              key={s.id}
+              title={s.title}
+              text={s.text}
+              author={s.author}
+            />
+          ))}
+          <NewTemplate />
+        </div>
+      </div>
+    </Layout>
+  )
+}
 
 export default IndexPage

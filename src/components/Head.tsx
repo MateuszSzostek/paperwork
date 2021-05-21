@@ -7,6 +7,7 @@ const Head = (props: IHeadProps) => {
     <Helmet>
       <meta charSet="utf-8" />
       <title>PAPERWORK</title>
+      <base href="%PUBLIC_URL%/" />
       <meta name="keywords" content="" />
       <meta name="author" content="" />
       <meta name="description" content="" />

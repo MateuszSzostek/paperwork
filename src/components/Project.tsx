@@ -12,6 +12,10 @@ const Project = (props: IProject) => {
   const { vendor, numOfContracts, project, totalValue } = props
   const [moreActive, setMoreActive] = useState<boolean>(false)
 
+  const [duplicatePopover, setDuplicatePopover] = useState<boolean>(false)
+  const [editPopover, setEditPopover] = useState<boolean>(false)
+  const [delPopover, setDelPopover] = useState<boolean>(false)
+
   return (
     <div
       style={moreActive ? { minHeight: "230px" } : { minHeight: "46px" }}
@@ -38,7 +42,11 @@ const Project = (props: IProject) => {
           <div className="mt-15px">{totalValue}</div>
         </div>
       </div>
-      <OptionsPopover />
+      <OptionsPopover
+        edit={setEditPopover}
+        duplicate={setDuplicatePopover}
+        del={setDelPopover}
+      />
     </div>
   )
 }
